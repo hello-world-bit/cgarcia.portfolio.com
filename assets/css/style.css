@@ -727,6 +727,39 @@ main {
 
 .select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  max-width: 80%;
+  width: 100%;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.modal img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -757,7 +790,7 @@ main {
   margin-bottom: 15px;
 }
 
-.project-img::before {
+/* .project-img::before {
   content: "";
   position: absolute;
   top: 0;
@@ -767,7 +800,7 @@ main {
   background: transparent;
   z-index: 1;
   transition: var(--transition-1);
-}
+} */
 
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 

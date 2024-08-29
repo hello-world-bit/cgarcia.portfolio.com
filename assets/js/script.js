@@ -1,6 +1,50 @@
 'use strict';
 
 
+// Get modal element
+const modal = document.getElementById("projectModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitles = document.getElementById("modalTitles");
+const modalDescription = document.getElementById("modalDescription");
+
+// Get the close button
+const closeBtn = document.querySelector(".close-btn");
+
+// Open modal function
+function openModal(image, title, description) {
+  modalImage.src = image;
+  modalTitles.textContent = title;
+  modalDescription.textContent = description;
+  modal.style.display = "block";
+}
+
+// Close modal function
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Listen for close click
+closeBtn.addEventListener("click", closeModal);
+
+// Listen for outside click to close
+window.addEventListener("click", (e) => {
+  if (e.target == modal) {
+    closeModal();
+  }
+});
+
+// Add click event listeners to project items
+const projectLinks = document.querySelectorAll(".project-link");
+
+projectLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const image = link.getAttribute("data-image");
+    const title = link.getAttribute("data-title");
+    const description = link.getAttribute("data-description");
+    openModal(image, title, description);
+  });
+});
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }

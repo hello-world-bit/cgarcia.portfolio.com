@@ -646,17 +646,22 @@
 
           </div>
 
-          <ul class="project-list">
+          <div id="projectModal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <img id="modalImage" src="" alt="Project Image" />
+              <h3 id="modalTitles">Project Title</h3>
+              <p id="modalDescription">Project Description</p>
+            </div>
+          </div>
+
+          <!-- <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
               <a href="#">
 
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/project-5.png" alt="brawlhalla" loading="lazy">
                 </figure>
 
                 <a href="" target="_blank"><h3 class="project-title">Web Development</h3></a>
@@ -666,13 +671,21 @@
               </a>
             </li>
 
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-title="Web Development" data-description="Freelance Project" data-image="./assets/images/project-5.png">
+                <figure class="project-img">
+                  <img src="./assets/images/project-5.png" alt="brawlhalla" loading="lazy">
+                </figure>
+                <h3 class="project-title">Web Development</h3>
+                <p class="project-category">Freelance Project</p>
+              </a>
+            </li>
+
             <li class="project-item  active" data-filter-item data-category="game development">
               <a href="#">
 
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                  
 
                   <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
                 </figure>
@@ -688,9 +701,7 @@
               <a href="#">
 
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                  
 
                   <img src="./assets/images/project-2.jpg" alt="orizon" loading="lazy">
                 </figure>
@@ -706,9 +717,7 @@
               <a href="#">
 
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                  
 
                   <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
                 </figure>
@@ -724,9 +733,6 @@
               <a href="#">
 
                 <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
 
                   <img src="./assets/images/project-4.jpg" alt="brawlhalla" loading="lazy">
                 </figure>
@@ -740,6 +746,53 @@
 
            
 
+          </ul> -->
+          <ul class="project-list">
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-title="Web Development" data-description="Freelance Project" data-image="./assets/images/project-5.png">
+                <figure class="project-img">
+                  <img src="./assets/images/project-5.png" alt="brawlhalla" loading="lazy">
+                </figure>
+                <h3 class="project-title">Web Development</h3>
+                <p class="project-category">Freelance Project</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="game development">
+              <a href="#" class="project-link" data-title="Hand Gesture Detection for Rock Paper Scissor" data-description="Final Thesis" data-image="./assets/images/project-1.jpg">
+                <figure class="project-img">
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">Hand Gesture Detection for Rock Paper Scissor</h3>
+                <p class="project-category">Final Thesis</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-title="Job Portal System" data-description="School Group Project" data-image="./assets/images/project-2.jpg">
+                <figure class="project-img">
+                  <img src="./assets/images/project-2.jpg" alt="orizon" loading="lazy">
+                </figure>
+                <h3 class="project-title">Job Portal System</h3>
+                <p class="project-category">School Group Project</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-title="Online Ukay-ukay Bookstore" data-description="School Web Project" data-image="./assets/images/project-3.jpg">
+                <figure class="project-img">
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+                <h3 class="project-title">Online Ukay-ukay Bookstore</h3>
+                <p class="project-category">School Web Project</p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-title="Travel Booking System" data-description="School Group Project" data-image="./assets/images/project-4.jpg">
+                <figure class="project-img">
+                  <img src="./assets/images/project-4.jpg" alt="brawlhalla" loading="lazy">
+                </figure>
+                <h3 class="project-title">Travel Booking System</h3>
+                <p class="project-category">School Group Project</p>
+              </a>
+            </li>
           </ul>
 
         </section>
