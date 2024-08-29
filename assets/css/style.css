@@ -728,36 +728,51 @@ main {
 .select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
 
 .modal {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  /* background-color: white; */
+  background-color: rgba(185, 184, 184, 0.5);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   max-width: 80%;
   width: 100%;
+  max-height: 80vh;
+  overflow-y: auto; 
 }
 
 .modal-content {
   text-align: center;
+  position: relative;
+  padding: 0;
 }
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: -40px;
+  right: 0px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px; 
+  color: rgba(255, 255, 255, 0.7); 
+  background: none; 
+  border: none; 
+  padding: 0; 
+  z-index: 1100; 
 }
 
 .modal img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
+  display: block;
+  margin-top: 30px; 
+  margin-bottom: 20px;
 }
+
+
 
 
 .project-list {
