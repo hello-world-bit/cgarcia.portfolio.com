@@ -734,7 +734,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: white; */
-  background-color: rgba(185, 184, 184, 0.5);
+  background-color: black;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
