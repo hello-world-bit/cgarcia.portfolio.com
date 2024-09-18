@@ -30,7 +30,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-<<<<<<< HEAD
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
@@ -41,13 +40,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-=======
-
-      # Step 4: Run tests
-      - name: Run tests
-        run: npm test  # Change this for your project
-
-      # Step 5: Build the project (if applicable)
-      - name: Build the project
-        run: npm run build  # Change this for your build command
->>>>>>> 7b7508e03d15007f5e7432e3e08dfe73bf1b63f1
