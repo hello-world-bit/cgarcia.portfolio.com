@@ -22,18 +22,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up environment (e.g., Node.js, Python, etc.)
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: "14"  
-          # Change this for your required version
-
-      # Step 3: Install dependencies (if applicable)
-      # - name: Install dependencies
-      #   run: npm install  
-        # Change this based on your project (npm, pip, etc.)
-
       # Step 4: Run tests
       - name: Run tests
         run: npm test  # Change this for your project
