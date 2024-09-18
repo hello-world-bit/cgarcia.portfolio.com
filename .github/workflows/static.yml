@@ -1,42 +1,41 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: CI/CD Pipeline
 
+# Trigger this workflow on push to the main branch or manual dispatch
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches:
+      - "main"
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Permissions (useful for private repositories or specific workflows)
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  actions: write
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Define the build job
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      # Step 1: Check out the code from the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+
+      # Step 2: Set up environment (e.g., Node.js, Python, etc.)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          node-version: "14"  # Change this for your required version
+
+      # Step 3: Install dependencies (if applicable)
+      - name: Install dependencies
+        run: npm install  # Change this based on your project (npm, pip, etc.)
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: npm test  # Change this for your project
+
+      # Step 5: Build the project (if applicable)
+      - name: Build the project
+        run: npm run build  # Change this for your build command
