@@ -1,43 +1,42 @@
-name: CI/CD Pipeline
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
 
-# Trigger this workflow on push to the main branch or manual dispatch
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches:
-      - "main"
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Permissions (useful for private repositories or specific workflows)
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
-  actions: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  # Define the build job
-  build:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Check out the code from the repository
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
-
-      # Step 2: Set up environment (e.g., Node.js, Python, etc.)
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: "14"  
-          # Change this for your required version
-
-      # Step 3: Install dependencies (if applicable)
-      # - name: Install dependencies
-      #   run: npm install  
-        # Change this based on your project (npm, pip, etc.)
-
-      # Step 4: Run tests
-      - name: Run tests
-        run: npm test  # Change this for your project
-
-      # Step 5: Build the project (if applicable)
-      - name: Build the project
-        run: npm run build  # Change this for your build command
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
